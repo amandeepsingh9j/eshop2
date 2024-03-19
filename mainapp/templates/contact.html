@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+<title>Contact Page | Ehop 2</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid my-2">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="background text-light text-center mb-2 p-2">
+                amandeep singh
+            </div>
+            <div class="background text-light text-center mb-2 p-2">
+                9971116691
+            </div>
+            <div class="background text-light text-center mb-2 p-2">
+                Punjabi colony
+            </div>
+
+            <div style="overflow:hidden;resize:none;max-width:100%;width:800px;height:500px;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Punjabi+Colony,+Udaipur,+Dhampur,+Uttar+Pradesh,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="our-googlemap-code" href="https://www.bootstrapskins.com/themes" id="grab-maps-authorization">premium bootstrap themes</a><style>#display-google-map img{max-height:none;max-width:none!important;background:none!important;}</style></div>
+
+        </div>
+
+        <div class="col-md-6 col-12">
+            <h5 class="background text-center text-light mb-2 p-2">Contact Us Page</h5>
+           
+            {% for i in messages %}
+
+            <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+
+                    {{i}}
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                </button>
+              </div>
+
+            {% endfor %}
+           
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="form-label">Name</label>
+                    <input type="text" name="name" class='form-control' placeholder="Enter Your Name">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="form-label">Email</label>
+                    <input type="email" name="email" class='form-control' placeholder="Enter Your Email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Phone No:</label>
+                    <input type="number" name="phone" class='form-control' placeholder="Enter Your Phone">
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Subject:</label>
+                    <input type="text" name="Subject" class='form-control' placeholder="Enter Your Subject">
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Message:</label>
+                    <textarea class="form-control" name="Message" placeholder="Enter Your Message" rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="background btn text-light text-center p-2 w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
